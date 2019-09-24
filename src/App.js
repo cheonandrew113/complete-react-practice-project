@@ -28,9 +28,6 @@ class App extends Component {
   }
 
 
-
-
-
   render(){
     // console.log("caughtBook:", this.state.caughtBook)
     return (
