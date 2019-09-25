@@ -4,21 +4,26 @@ class Book extends React.Component {
 
 
   state = {
-    clicked: false,
-    comment: []
+    showComments: false,
+    comments: []
   }
   
-  otherClickHandler = () => {
+  addBookShelf = () => {
     this.props.clickHandler(this.props.book)
   }
 
   render(){
+
+
+
+
     return (
       <div>
         <h2>{this.props.book.title}</h2>
-        <img alt="" src={this.props.book.img} onClick={this.otherClickHandler}/>
-        <button onClick={() => {this.setState({clicked: !this.state.clicked})}}>Add Comment</button>
-        {this.state.clicked? <div><textarea placeholder="add comment here"> </textarea><button>submit comment</button></div> : null}
+        <img alt="" src={this.props.book.img} onClick={this.addBookShelf}/>
+        <button onClick={() => {this.setState({showComments: !this.state.showComments})}}>Add Comment</button>
+        <button>All comments</button>
+        {this.state.showComments? <div><textarea placeholder="add comment here"> </textarea><button>submit comment</button></div> : null}
       </div>
     );
   }
