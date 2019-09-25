@@ -4,7 +4,8 @@ class Book extends React.Component {
 
 
   state = {
-    clicked: false
+    clicked: false,
+    comment: []
   }
   
   otherClickHandler = () => {
@@ -16,8 +17,8 @@ class Book extends React.Component {
       <div>
         <h2>{this.props.book.title}</h2>
         <img alt="" src={this.props.book.img} onClick={this.otherClickHandler}/>
-        <button onClick={() => {this.setState({clicked: !this.state.clicked})}}>See Author</button>
-        {this.state.clicked? <h3>{this.props.book.author}</h3> : null}
+        <button onClick={() => {this.setState({clicked: !this.state.clicked})}}>Add Comment</button>
+        {this.state.clicked? <div><textarea placeholder="add comment here"> </textarea><button>submit comment</button></div> : null}
       </div>
     );
   }

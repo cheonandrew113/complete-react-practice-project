@@ -20,13 +20,14 @@ class BookList extends Component {
   }
 
   handleFormSubmit = (e, bookObj) => {
+  console.log("check it out:", e, bookObj)
   	e.preventDefault()
 
 	  if(!this.state.books.includes(bookObj)) {
   	  this.setState({
   		books: [bookObj, ...this.state.books]
   	  })
-  	}
+    }
   }
 
 
